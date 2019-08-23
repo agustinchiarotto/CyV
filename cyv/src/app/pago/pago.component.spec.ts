@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PeroidoAfiliacionComponent } from './peroido-afiliacion.component';
+import { PagoComponent } from './pago.component';
 
-describe('PeroidoAfiliacionComponent', () => {
-  let component: PeroidoAfiliacionComponent;
-  let fixture: ComponentFixture<PeroidoAfiliacionComponent>;
+describe('PagoComponent', () => {
+  let component: PagoComponent;
+  let fixture: ComponentFixture<PagoComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PeroidoAfiliacionComponent ]
+      declarations: [ PagoComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(PeroidoAfiliacionComponent);
+    fixture = TestBed.createComponent(PagoComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

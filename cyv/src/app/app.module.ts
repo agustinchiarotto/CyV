@@ -18,6 +18,17 @@ import { EscribanoComponent } from './escribano/escribano.component';
 import { ReciboSueldoComponent } from './recibo-sueldo/recibo-sueldo.component';
 import { PedidoAfiliacionComponent } from './pedido-afiliacion/pedido-afiliacion.component';
 import { PeroidoAfiliacionComponent } from './peroido-afiliacion/peroido-afiliacion.component';
+import { PeriodoAfiliacionComponent } from './periodo-afiliacion/periodo-afiliacion.component';
+import { CoutaComponent } from './couta/couta.component';
+import { EstadoTerrenoComponent } from './estado-terreno/estado-terreno.component';
+import { PagoComponent } from './pago/pago.component';
+import { TablaDeReferenciasComponent } from './tabla-de-referencias/tabla-de-referencias.component';
+import { InteresComponent } from './interes/interes.component';
+import { ValorComponent } from './valor/valor.component';
+import { EstadoBeneficioComponent } from './estado-beneficio/estado-beneficio.component';
+import { SaldadoComponent } from './saldado/saldado.component';
+import { PendienteComponent } from './pendiente/pendiente.component';
+import { PlanDeCoutasComponent } from './plan-de-coutas/plan-de-coutas.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +47,18 @@ import { PeroidoAfiliacionComponent } from './peroido-afiliacion/peroido-afiliac
     EscribanoComponent,
     ReciboSueldoComponent,
     PedidoAfiliacionComponent,
-    PeroidoAfiliacionComponent
+    PeroidoAfiliacionComponent,
+    PeriodoAfiliacionComponent,
+    CoutaComponent,
+    EstadoTerrenoComponent,
+    PagoComponent,
+    TablaDeReferenciasComponent,
+    InteresComponent,
+    ValorComponent,
+    EstadoBeneficioComponent,
+    SaldadoComponent,
+    PendienteComponent,
+    PlanDeCoutasComponent
   ],
   imports: [
     BrowserModule,

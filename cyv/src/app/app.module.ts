@@ -16,10 +16,7 @@ import { GaranteComponent } from './garante/garante.component';
 import { DuenioComponent } from './duenio/duenio.component';
 import { EscribanoComponent } from './escribano/escribano.component';
 import { ReciboSueldoComponent } from './recibo-sueldo/recibo-sueldo.component';
-import { PedidoAfiliacionComponent } from './pedido-afiliacion/pedido-afiliacion.component';
-import { PeroidoAfiliacionComponent } from './peroido-afiliacion/peroido-afiliacion.component';
 import { PeriodoAfiliacionComponent } from './periodo-afiliacion/periodo-afiliacion.component';
-import { CoutaComponent } from './couta/couta.component';
 import { EstadoTerrenoComponent } from './estado-terreno/estado-terreno.component';
 import { PagoComponent } from './pago/pago.component';
 import { TablaDeReferenciasComponent } from './tabla-de-referencias/tabla-de-referencias.component';
@@ -32,6 +29,28 @@ import { PlanDeCoutasComponent } from './plan-de-coutas/plan-de-coutas.component
 import { PrestamoComponent } from './prestamo/prestamo.component';
 import { SorteoComponent } from './sorteo/sorteo.component';
 import { SolicitudPrestamoComponent } from './solicitud-prestamo/solicitud-prestamo.component';
+import { FooterComponent } from './layout/footer/footer.component';
+import { HeaderComponent } from './layout/header/header.component';
+import { SidebarComponent } from './layout/sidebar/sidebar.component';
+import { InicioComponent } from './inicio/inicio.component';
+import { CuotaComponent } from './cuota/cuota.component';
+
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+
+
+// PrimeNG
+import {AccordionModule, CalendarModule, MenuItem} from 'primeng/primeng';
+import { SharedModule, PanelModule } from 'primeng/primeng';
+import { ButtonModule } from 'primeng/button';
+import { TableModule } from 'primeng/components/table/table';
+import {DropdownModule} from 'primeng/dropdown';
+import { DialogModule } from 'primeng/dialog';
+import {MessagesModule} from 'primeng/messages';
+import {MessageModule} from 'primeng/message';
+import {TabViewModule} from 'primeng/tabview';
+import {MultiSelectModule} from 'primeng/multiselect';
+
+
 
 @NgModule({
   declarations: [
@@ -49,10 +68,7 @@ import { SolicitudPrestamoComponent } from './solicitud-prestamo/solicitud-prest
     DuenioComponent,
     EscribanoComponent,
     ReciboSueldoComponent,
-    PedidoAfiliacionComponent,
-    PeroidoAfiliacionComponent,
     PeriodoAfiliacionComponent,
-    CoutaComponent,
     EstadoTerrenoComponent,
     PagoComponent,
     TablaDeReferenciasComponent,
@@ -64,13 +80,37 @@ import { SolicitudPrestamoComponent } from './solicitud-prestamo/solicitud-prest
     PlanDeCoutasComponent,
     PrestamoComponent,
     SorteoComponent,
-    SolicitudPrestamoComponent
+    SolicitudPrestamoComponent,
+    FooterComponent,
+    HeaderComponent,
+    SidebarComponent,
+    InicioComponent,
+    CuotaComponent
   ],
   imports: [
+    AccordionModule,
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    BrowserModule,
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    ButtonModule,
+    PanelModule,
+    SharedModule,
+  
+    TableModule,
+    CalendarModule,
+    DialogModule,
+    DropdownModule,
+    MessagesModule,
+    MessageModule,
+    TabViewModule
   ],
-  providers: [],
+  providers: [
+  
+
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

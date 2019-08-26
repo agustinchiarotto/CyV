@@ -1,5 +1,5 @@
 import { Persona } from '../Persona/persona';
-import { Cuota} from "../Couta/couta";
+import { Cuota} from "../Cuota/cuota";
 import { Periodo } from "../periodo-afiliacion/periodo"
 
 

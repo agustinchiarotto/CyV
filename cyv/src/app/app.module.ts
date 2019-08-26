@@ -29,6 +29,9 @@ import { EstadoBeneficioComponent } from './estado-beneficio/estado-beneficio.co
 import { SaldadoComponent } from './saldado/saldado.component';
 import { PendienteComponent } from './pendiente/pendiente.component';
 import { PlanDeCoutasComponent } from './plan-de-coutas/plan-de-coutas.component';
+import { PrestamoComponent } from './prestamo/prestamo.component';
+import { SorteoComponent } from './sorteo/sorteo.component';
+import { SolicitudPrestamoComponent } from './solicitud-prestamo/solicitud-prestamo.component';
 
 @NgModule({
   declarations: [
@@ -58,7 +61,10 @@ import { PlanDeCoutasComponent } from './plan-de-coutas/plan-de-coutas.component
     EstadoBeneficioComponent,
     SaldadoComponent,
     PendienteComponent,
-    PlanDeCoutasComponent
+    PlanDeCoutasComponent,
+    PrestamoComponent,
+    SorteoComponent,
+    SolicitudPrestamoComponent
   ],
   imports: [
     BrowserModule,

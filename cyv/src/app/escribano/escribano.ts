@@ -1,7 +1,6 @@
-import { Persona } from '../Persona/persona';
+import { Persona } from '../persona/persona';
 
 export class Escribano extends Persona{
     matricula:string;
     estudio:string;
-    
 }

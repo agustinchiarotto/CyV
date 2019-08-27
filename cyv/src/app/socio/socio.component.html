@@ -12,9 +12,11 @@
                         <div class="card-header">
                             <h6 style="text-decoration: none;color: #333;">
                                 <strong style="text-decoration: none;color: #333;">Administración de Socios
-                                    <button pButton class="ui-button-raised ui-button-rounded float-right" label="Nuevo Socio"
-                                         icon="fas fa-plus" data-toggle="modal" data-target="#modalAgregarMedico">
+                                    <button mat-raised-button color="primary" class="float-right" iconName="thumbs-up">NUEVO
+
                                     </button>
+
+                                   
                                 </strong>
                             </h6>
                         </div>
@@ -22,6 +24,77 @@
                 </div>
             </div>
         </div>
-        
+
+
+        <div class="card-body">
+            <p-table [responsive]="true" #dt [columns]="cols" [value]="socios" selectionMode="single" [paginator]="true"
+                [rows]="12" [(selection)]="selectedSocio">
+                <ng-template pTemplate="caption">
+                    <div style="text-align: right">
+                        <i class="fa fa-search" style="margin:4px 4px 0 0"></i>
+                        <input type="text" pInputText size="50" placeholder="Filtro"
+                            (input)="dt.filterGlobal($event.target.value, 'contains')"
+                            style="width:auto">
+                    </div>
+                </ng-template>
+                <ng-template pTemplate="header" let-columns>
+                    <tr>
+                        <th *ngFor="let col of columns">
+                            {{col.header}}
+                        </th>
+                    </tr>
+                    <tr>
+                        
+                        <th *ngFor="let col of columns" [ngSwitch]="col.field">
+                            <input *ngSwitchCase="'dni'" pInputText type="text"
+                                (input)="dt.filter($event.target.value, col.field, col.filterMatchMode)"
+                                style="width:100%">
+                            <input *ngSwitchCase="'apellido'" pInputText type="text"
+                                (input)="dt.filter($event.target.value, col.field, col.filterMatchMode)"
+                                style="width:100%">
+                            <input *ngSwitchCase="'nombre'" pInputText type="text"
+                                (input)="dt.filter($event.target.value, col.field, col.filterMatchMode)"
+                                style="width:100%">
+                            <input *ngSwitchCase="'fecha_nacimiento'" pInputText type="text"
+                                (input)="dt.filter($event.target.value, col.field, col.filterMatchMode)"
+                                style="width:100%">
+                            <input *ngSwitchCase="'domicilio'" pInputText type="text"
+                                (input)="dt.filter($event.target.value, col.field, col.filterMatchMode)"
+                                style="width:100%">
+                            <input *ngSwitchCase="'email'" pInputText type="text"
+                                (input)="dt.filter($event.target.value, col.field, col.filterMatchMode)"
+                                style="width:100%">
+                                <input *ngSwitchCase="'telefono'" pInputText type="text"
+                                (input)="dt.filter($event.target.value, col.field, col.filterMatchMode)"
+                                style="width:100%">
+                                <input *ngSwitchCase="'numero_socio'" pInputText type="text"
+                                (input)="dt.filter($event.target.value, col.field, col.filterMatchMode)"
+                                style="width:100%">
+                                <input *ngSwitchCase="'fecha_inicio'" pInputText type="text"
+                                (input)="dt.filter($event.target.value, col.field, col.filterMatchMode)"
+                                style="width:100%">
+                                <input *ngSwitchCase="'fecha_fin'" pInputText type="text"
+                                (input)="dt.filter($event.target.value, col.field, col.filterMatchMode)"
+                                style="width:100%">
+
+
+                        </th>
+                    </tr>
+                </ng-template>
+
+                <ng-template pTemplate="body" let-medico let-columns="columns">
+                    <tr [pSelectableRow]="medico">
+                        <td *ngFor="let col of columns">
+                            <div *ngIf='medico[col.field] && col.field=="fecha_nacimiento"'>
+                                {{medico[col.field] | date: 'dd/MM/yyyy'}}
+                            </div>
+                            <div *ngIf='medico[col.field] && col.field!="fecha_nacimiento"'>
+                                {{medico[col.field]}}
+                            </div>
+                        </td>
+                    </tr>
+                </ng-template>
+            </p-table>
+        </div>
     </div>
 </div>

@@ -1,4 +1,4 @@
-import { Persona } from '../Persona/persona';
+import { Persona } from '../persona/persona';
 
 export class Recibo{
     _id: string;

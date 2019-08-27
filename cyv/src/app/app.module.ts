@@ -52,6 +52,18 @@ import {MultiSelectModule} from 'primeng/multiselect';
 
 
 
+
+// ANGULAR MATERIAL
+
+import {MatButtonModule} from '@angular/material/button';
+import {MatIconModule} from '@angular/material/icon';
+
+
+
+
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -88,6 +100,7 @@ import {MultiSelectModule} from 'primeng/multiselect';
     CuotaComponent
   ],
   imports: [
+  
     AccordionModule,
     BrowserModule,
     AppRoutingModule,
@@ -98,14 +111,15 @@ import {MultiSelectModule} from 'primeng/multiselect';
     ButtonModule,
     PanelModule,
     SharedModule,
-  
+    MatButtonModule,
     TableModule,
     CalendarModule,
     DialogModule,
     DropdownModule,
     MessagesModule,
     MessageModule,
-    TabViewModule
+    TabViewModule,
+    MatIconModule
   ],
   providers: [
   

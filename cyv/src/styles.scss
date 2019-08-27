@@ -1,0 +1,17 @@
+@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+@import './assets/css/bracket.min.css';
+@import './assets/primeng/resources/themes/nova-dark/theme.css';
+@import './assets/primeng/resources/primeng.min.css';
+
+
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+@media (min-width: 1200px){
+.container {
+   margin-left:15%;
+}
+
+    }

@@ -1,18 +1,20 @@
 <div [@routerTransition]>
     <div class="container">
-        <div class="pd-x-20 pd-sm-x-30 pd-t-20 pd-sm-t-30" style="margin-left:50%">
+        <div class="pd-x-20 pd-sm-x-30 pd-t-20 pd-sm-t-30" style="margin-left:40%">
             <h4 class="tx-gray-800 mg-b-5">SOCIOS</h4>
         </div>
             
 
         <div class="br-pagebody pd-x-20 pd-sm-x-30">
-            <div class="row row-sm ml-5">
+            <div class="row row-sm">
                 <div class="col-lg-12">
                     <div class="card card-default mb-3">
                         <div class="card-header">
                             <h6 style="text-decoration: none;color: #333;">
                                 <strong style="text-decoration: none;color: #333;">Administración de Socios
-                                    <button mat-raised-button color="primary" class="float-right" iconName="thumbs-up">NUEVO
+                                    <button mat-raised-button color="primary" class="float-right" iconName="thumbs-up"
+                                    data-toggle="modal" data-target="#modalAgregarSocio"
+                                    >NUEVO
 
                                     </button>
 
@@ -85,16 +87,106 @@
                 <ng-template pTemplate="body" let-medico let-columns="columns">
                     <tr [pSelectableRow]="medico">
                         <td *ngFor="let col of columns">
+                                <div *ngIf='medico[col.field] && col.field!="fecha_nacimiento" && col.field!="fecha_fin" && col.field!="fecha_inicio"'>
+                                        {{medico[col.field]}}
+                                    </div>
                             <div *ngIf='medico[col.field] && col.field=="fecha_nacimiento"'>
                                 {{medico[col.field] | date: 'dd/MM/yyyy'}}
                             </div>
-                            <div *ngIf='medico[col.field] && col.field!="fecha_nacimiento"'>
-                                {{medico[col.field]}}
+                            <div *ngIf='medico[col.field] && col.field=="fecha_inicio"'>
+                                {{medico[col.field] | date: 'dd/MM/yyyy'}}
                             </div>
+                            <div *ngIf='medico[col.field] && col.field=="fecha_fin"'>
+                                {{medico[col.field] | date: 'dd/MM/yyyy'}}
+                            </div>
+                           
                         </td>
                     </tr>
                 </ng-template>
             </p-table>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- ============================================================== -->
+<!-- MODAL AGREGAR -->
+<!-- ============================================================== -->
+<div class="modal fade" id="modalAgregarSocio" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document" style="width: 1200px">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Nuevo Socio</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close" #cerrarAgregar>
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form (ngSubmit)="f.form.valid  
+            && cargarSocio(f);
+            " #f="ngForm" novalidate>
+                <div class="modal-body">
+
+                    <div class="form-group required">
+                        <label class="control-label" for="dni">DNI:</label>
+                        <input type="text" class="form-control" name="dni" [(ngModel)]="model.dni"
+                            #dni="ngModel" autocomplete="off" required />
+                        <p-message *ngIf="f.submitted && !model.dni" severity="error" text="Campo Obligatorio.">
+                        </p-message>
+                    </div>
+
+                    <div class="form-group required">
+                        <label class="control-label" for="nombre">Nombre:</label>
+                        <input type="text" class="form-control" name="nombre" [(ngModel)]="model.nombre"
+                            #nombre="ngModel" autocomplete="off" required />
+                        <p-message *ngIf="f.submitted && !model.nombre" severity="error"
+                            text="Campo Obligatorio."></p-message>
+                    </div>
+
+                    <div class="form-group required">
+                        <label class="control-label" for="apellido">Apellido:</label>
+                        <input type="text" class="form-control" name="apellido" [(ngModel)]="model.apellido"
+                            #apellido="ngModel" autocomplete="off" required />
+                        <p-message *ngIf="f.submitted && !model.apellido" severity="error"
+                            text="Campo Obligatorio."></p-message>
+                    </div>
+
+                    <div class="form-group required">
+                        <label class="control-label" for="telefono">Telefono:</label>
+                        <input type="text" class="form-control" name="telefonoMedico" [(ngModel)]="model.telefono"
+                            #telefono="ngModel" autocomplete="off" required />
+                        <p-message *ngIf="f.submitted && !model.telefono" severity="error"
+                            text="Campo Obligatorio."></p-message>
+
+                    </div>
+
+                    <div class="form-group required">
+                        <label class="control-label" for="domicilio">Domicilo=:</label>
+                        <input type="text" class="form-control" name="domicilio"
+                            [(ngModel)]="model.domicilio" #domicilio="ngModel" autocomplete="off"
+                            required />
+                        <p-message *ngIf="f.submitted && !model.domicilio" severity="error"
+                            text="Campo Obligatorio."></p-message>
+
+                    </div>
+
+                    <div class="form-group required">
+                        <label class="control-label" for="email">Email:</label>
+                        <input type="text" class="form-control" name="email"
+                            [(ngModel)]="model.email" #email="ngModel" autocomplete="off"
+                            required />
+                        <p-message *ngIf="f.submitted && !model.email" severity="error"
+                            text="Campo Obligatorio."></p-message>
+
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button pButton class="ui-button-rounded ui-button-success" label="Aceptar" icon="fas fa-check"
+                        type="submit">
+                    </button>
+                </div>
+            </form>
         </div>
     </div>
 </div>

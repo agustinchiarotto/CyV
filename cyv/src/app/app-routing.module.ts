@@ -4,6 +4,8 @@ import { SocioComponent } from './socio/socio.component';
 import { TerrenoComponent } from './terreno/terreno.component';
 import { SolicitudTerrenoComponent } from './solicitud-terreno/solicitud-terreno.component';
 import { InicioComponent } from './inicio/inicio.component';
+import { VerificarSolicitudTerrenoComponent } from './verificar-solicitud-terreno/verificar-solicitud-terreno.component';
+import { LoteoComponent } from './loteo/loteo.component';
 
 
 
@@ -14,6 +16,9 @@ const routes: Routes = [
   // RUTAS A COMPONENTES
   { path: 'inicio', component: InicioComponent},
   { path: 'socios', component: SocioComponent},
+  { path: 'terrenos', component: TerrenoComponent},
+  { path: 'loteos', component: LoteoComponent},
+  { path: 'aprobar', component: VerificarSolicitudTerrenoComponent},
   { path: 'terrenos', component: TerrenoComponent},
   { path: 'solicitud-terreno', component: SolicitudTerrenoComponent},
  // { path: 'usuarios', component: UsuariosComponent, canActivate: [AuthGuard] },

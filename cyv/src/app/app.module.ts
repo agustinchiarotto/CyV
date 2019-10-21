@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -53,10 +54,12 @@ import {MultiSelectModule} from 'primeng/multiselect';
 
 
 
+
 // ANGULAR MATERIAL
 
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
+import { VerificarSolicitudTerrenoComponent } from './verificar-solicitud-terreno/verificar-solicitud-terreno.component';
 
 
 
@@ -97,7 +100,8 @@ import {MatIconModule} from '@angular/material/icon';
     HeaderComponent,
     SidebarComponent,
     InicioComponent,
-    CuotaComponent
+    CuotaComponent,
+    VerificarSolicitudTerrenoComponent
   ],
   imports: [
   
@@ -119,7 +123,9 @@ import {MatIconModule} from '@angular/material/icon';
     MessagesModule,
     MessageModule,
     TabViewModule,
-    MatIconModule
+    MatIconModule,
+    FormsModule,                           
+    ReactiveFormsModule
   ],
   providers: [
   

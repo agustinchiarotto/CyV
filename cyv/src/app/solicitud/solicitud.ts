@@ -11,4 +11,8 @@ export class Solicitud{
     socio:Socio;
     garante:Garante;
     recibos:[Recibo];
+    numeroGarante:number;
+    numeroSocio:number;
+    nombreLoteo:string;
+
 }

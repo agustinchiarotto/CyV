@@ -7,8 +7,8 @@ export class Socio extends Persona{
    
     numero_socio:string;
     cuotas:[Cuota]; 
+    fecha_inicio:Date;
+    fecha_fin:Date;
     periodo_afiliacion:Periodo;
-
-
- 
+    terreno:boolean;
 }

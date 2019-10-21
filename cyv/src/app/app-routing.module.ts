@@ -7,8 +7,6 @@ import { InicioComponent } from './inicio/inicio.component';
 import { VerificarSolicitudTerrenoComponent } from './verificar-solicitud-terreno/verificar-solicitud-terreno.component';
 import { LoteoComponent } from './loteo/loteo.component';
 
-
-
 const routes: Routes = [
   // REDIRECCIONAMIENTO A INICIO
   { path: '', redirectTo: '/inicio', pathMatch: 'full' },
@@ -25,10 +23,8 @@ const routes: Routes = [
  
 ];
 
-
-
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
